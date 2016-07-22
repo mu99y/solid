@@ -1,37 +1,30 @@
 ﻿namespace BreakingLiskovSubtitutionPrinciple
 {
-    public class Rectangle
+    public class Rectangle : Shape
     {
-        public virtual double Width { get; set; }
-        public virtual double Height { get; set; }
+        public  double Width { get; set; }
+        public  double Height { get; set; }
 
-        public double Area()
+        public override double Area()
         {
             return Height*Width;
         }
     }
 
-    public class Square : Rectangle
+    public abstract class Shape
     {
-        public override double Height 
+        public abstract double Area();
+    }
+
+
+    public class Square : Shape
+    {
+        public double Side { get; set; }
+        public override double Area()
         {
-            get { return base.Height; }
-            set
-            {
-                base.Height = value;
-                base.Width = value;
-            }
+            return Side*Side;
         }
-        
-        public override double Width 
-        {
-            get { return base.Width; }
-            set
-            {
-                base.Height = value;
-                base.Width = value;
-            }
-        }
+       
     }
 
 #region What's wrong with the above?

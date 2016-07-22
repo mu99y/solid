@@ -45,9 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductConsole.cs" />
+    <Compile Include="Interface way of doing\Featured.cs" />
+    <Compile Include="Abstract class way of doing\Featured.cs" />
+    <Compile Include="Interface way of doing\IProduct.cs" />
+    <Compile Include="Interface way of doing\Product.cs" />
+    <Compile Include="Abstract class way of doing\Product.cs" />
+    <Compile Include="Interface way of doing\ProductConsole.cs" />
+    <Compile Include="Abstract class way of doing\Standard.cs" />
     <Compile Include="ProductType.cs" />
+    <Compile Include="Interface way of doing\Standard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

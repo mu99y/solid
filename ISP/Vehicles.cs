@@ -1,6 +1,6 @@
 namespace BreakingInterfaceSegregationPrinciple
 {
-    public class LuxuryCar : IVehicle
+    public class LuxuryCar : IVehicle, IRadio, ISunRoof
     {
         private bool _radioOn;
 
@@ -49,63 +49,37 @@ namespace BreakingInterfaceSegregationPrinciple
             //change to selected gear...remember that bikes have a sequential gear box!
         }
 
-        public void TurnOnRadio()
-        {
-            throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
-        }
 
-        public void TurnOffRadio()
-        {
-            throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
-        }
-
-        public void OpenSunRoof(int percentOpen)
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
-        }
-
-        public void CloseSunRoof()
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
-        }
     }
 
-    public class BudgetCar : IVehicle
-    {
-        private bool _radioOn;
+    public class BudgetCar : IVehicle, IRadio
+        {
+            private bool _radioOn;
 
-        public void Accelerate()
-        {
-            // do something to make car go faster
-        }
+            public void Accelerate()
+            {
+                // do something to make car go faster
+            }
 
-        public void Brake()
-        {
-            //do something to make car slow down
-        }
+            public void Brake()
+            {
+                //do something to make car slow down
+            }
 
-        public void ChangeGear(int gear)
-        {
-            // change to selected gear
-        }
+            public void ChangeGear(int gear)
+            {
+                // change to selected gear
+            }
 
-        public void TurnOnRadio()
-        {
-            _radioOn = true;
-        }
-        public void TurnOffRadio()
-        {
-            _radioOn = false;
-        }
+            public void TurnOnRadio()
+            {
+                _radioOn = true;
+            }
 
-        public void OpenSunRoof(int percentOpen)
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
-        }
+            public void TurnOffRadio()
+            {
+                _radioOn = false;
+            }
 
-        public void CloseSunRoof()
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
         }
-    }
 }

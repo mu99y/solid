@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 
 namespace BreakingSingleResponsibility
 {
@@ -12,7 +13,7 @@ namespace BreakingSingleResponsibility
             }
             catch (Exception ex)
             {
-                System.IO.File.WriteAllText(@"C:\Error.txt", ex.ToString());
+                ExceptionLogger.Log(ex.Message);
             }
         }
     }
